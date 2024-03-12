@@ -1,0 +1,164 @@
+.main_profile_details {
+    width: 100%;
+    justify-content: space-around;
+    margin-top: -50px;
+    margin-bottom: 10px;
+    z-index: 10;
+    align-items: start;
+}
+
+.main_profile_social {
+    width: 40%;
+    background: #ffffff;
+    border-radius: 7px;
+    padding: 10px 0px;
+    box-shadow: 1px 1px 6px grey;
+}
+
+.main_profile_info {
+    width: 50%;
+    background: #ffffff;
+    border-radius: 7px;
+    padding: 10px 0px;
+    box-shadow: 1px 1px 6px grey;
+}
+
+.profile_social_div {
+    width: 100%;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+}
+
+
+.profile-social-btn {
+    padding: 5px 20px;
+    border-radius: 3px;
+    font-size: 14px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.profile-social-btn:first-child {
+    background: #11CDEF;
+    color: white;
+}
+
+.profile-social-btn:last-child {
+    background: #172B4D;
+    color: white;
+}
+
+.profile_social_div img {
+    border-radius: 50%;
+    width: 140px;
+    height: 160px;
+    margin-top: -40px;
+    transition: 0.6s;
+}
+
+.profile_social_div img:hover {
+    transform: translateY(-20px);
+}
+
+.profile_social_data {
+    width: 95%;
+    margin-top: 20px;
+}
+
+.profile_social_data p {
+    width: 30%;
+    font-weight: bold;
+    font-size: 15px;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    line-height: 17px;
+}
+
+.profile_social_data p span:first-child {
+
+    color: #5590d3;
+}
+
+.profile_social_data p span:last-child {
+    color: #7ec4e2;
+}
+
+.profile_social_name {
+    font-size: 15px;
+    color: #3252A8;
+    margin-top: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: 'Courier New', Courier, monospace;
+
+}
+
+.profile_info_setting {
+    width: 90%;
+    justify-content: space-between;
+}
+
+.profile_info_setting p {
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    color: #172B4D;
+    font-size: 15px;
+}
+
+.profile_info_setting button {
+    font-weight: bold;
+    background: #5590d3;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: white;
+    padding: 5px 20px;
+    border-radius: 4px;
+}
+
+.profile_info_data {
+    width: 100%;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.profile_info_data_1 {
+    width: 45%;
+}
+
+.profile_info_data_1 p {
+    font-size: 14px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    color: #525F92;
+    width: 100%;
+    text-align: left;
+    margin: 5px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.profile_info_data_1 p:last-child {
+    color: grey;
+    box-shadow: 0px 0px 5px grey;
+    padding: 8px 5px;
+    border-radius: 5px;
+}
+
+.profile_info_data_1:last-child {
+    width: 70%;
+}
+
+.profile_info_data_1:last-child p:last-child {
+    height: 100px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    word-break: break-all;
+    text-overflow: clip;
+}

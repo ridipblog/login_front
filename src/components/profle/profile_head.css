@@ -1,0 +1,96 @@
+.profile_head_div {
+    width: 100%;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.profile_setting_menu {
+    width: 20%;
+    justify-content: left;
+}
+
+.profile_setting_menu_div {
+    width: 80%;
+    /* background: #5e6a68; */
+    color: #42A2FE;
+    border-radius: 10px;
+    padding: 4px 10px;
+    flex-wrap: nowrap;
+    cursor: pointer;
+}
+
+.profile_head_div span {
+    font-size: 26px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    margin-left: 10px;
+    transition: 0.5s;
+}
+
+.rotate_setting:hover {
+    transform: rotate(-50deg);
+}
+
+.profile_head_div_1 {
+    width: 65%;
+}
+
+.profile_head_sub_div {
+    width: 100%;
+    justify-content: right;
+}
+
+.profile_head_input_div {
+    width: 45%;
+    border: 1px solid white;
+    border-radius: 20px;
+    flex-wrap: nowrap;
+    padding: 2px 5px;
+}
+
+.profile_head_input_div span {
+    font-size: 15px;
+    width: 30px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    width: 9%;
+}
+
+.profile_head_input_div input {
+    background: transparent;
+    outline: none;
+    border: none;
+    font-size: 15px;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    width: 90%;
+    margin-left: 5px;
+}
+
+.profile_head_user_div {
+    width: 30%;
+    flex-wrap: nowrap;
+}
+
+.profile_head_user_div span {
+    font-size: 15px;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+}
+
+.profile_head_user_div span:first-child {
+    margin-right: 7px;
+    background-color: #504e52;
+    width: 30px;
+    height: 28px;
+    padding: 0px;
+    font-size: 13px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,0 +1,151 @@
+.main-chat-frnd-div {
+    background: #414759;
+    height: 90%;
+    align-content: start;
+    width: 30%;
+}
+
+.chat-frnd-search-div {
+    width: 95%;
+    background: transparent;
+    height: 35px;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    margin-top: 20px;
+    justify-content: space-between;
+}
+
+.chat-frnd-search-div input {
+    width: 85%;
+    background: #4F5565;
+    outline: none;
+    border: none;
+    font-size: 14px;
+    padding: 5px 3px;
+    border-radius: 6px;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+}
+
+.chat-frnd-search-div input::placeholder {
+    color: #999EB6;
+}
+
+.chat-frnd-search-div p {
+    width: 10%;
+    text-align: center;
+    color: #6F77FD;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.chat-frnd-list-div {
+    width: 100%;
+    margin-top: 10px;
+    position: relative;
+    overflow: scroll;
+    height: auto;
+    max-height: calc(100% - 55px);
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    align-content: flex-start;
+
+}
+
+.chat-frnd-list-div::-webkit-scrollbar {
+    width: 0px;
+}
+
+.chat-frnd-div {
+    width: 90%;
+    background: #485160;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    padding: 5px 3px;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    flex-wrap: nowrap;
+    outline: none;
+    border: none;
+    z-index: 99;
+    justify-content: space-between;
+    transition: 0.3s ease-in-out;
+}
+
+/* .chat-frnd-div:first-child {
+    background: #7077FF;
+} */
+
+.chat-frnd-div:hover {
+    background: #7077FF;
+}
+
+.chat-frnd-profile-div {
+    width: 20%;
+    position: relative;
+}
+
+.frnd_profile {
+    width: 34px;
+    height: 38px;
+    border-radius: 50%;
+}
+
+.chat-frnd-profile-div span {
+    z-index: 99;
+    width: 8px;
+    border-radius: 50%;
+    background-color: red;
+    height: 8px;
+    position: absolute;
+    margin-right: 20px;
+    bottom: 0;
+    color: red;
+}
+
+.chat-frnd-details-div {
+    width: 75%;
+}
+
+.chat-frnd-details-div p {
+    width: 100%;
+    color: white;
+    font-size: 14px;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 5px 0px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-align: left;
+    white-space: nowrap;
+
+}
+
+.chat-frnd-details-div p span {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.chat-frnd-details-div p span:first-child {
+    width: 68%;
+}
+
+.chat-frnd-details-div p span:last-child {
+    width: 29%;
+}
+
+.chat-frnd-details-div p:first-child {
+
+    font-weight: bold;
+}
+
+.frnd-btn-clicked {
+    background: #7077FF;
+
+}

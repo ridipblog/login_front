@@ -1,0 +1,220 @@
+:root {
+    --main-bg: #D2DBEA;
+    --para-1: 'Poppins', sans-serif;
+    --div-bg: #f9f9f9;
+    --para-2: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    --shadow-1: 1px 1px 3px rgba(0, 0, 0, 0.1),
+        -1px -1px 3px rgba(0, 0, 0, 0.1),
+        1px -1px 3px rgba(0, 0, 0, 0.1),
+        -1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.main-chat-message-div {
+    width: 60%;
+    height: 90%;
+    background: #383F4D;
+    align-content: flex-start;
+}
+
+.frnd-chat-nav-div {
+    width: 100%;
+    background: #414759;
+    justify-content: flex-start;
+    height: 70px;
+}
+
+.frnd-chat-nav-img-div {
+    /* width: 20%; */
+    margin-left: 10px;
+}
+
+.frnd-chat-nav-div img {
+    width: 44px;
+    height: 48px;
+    border-radius: 50%;
+}
+
+.frnd-chat-nav-name-div {
+    width: 78%;
+    margin-left: 10px;
+}
+
+.frnd-chat-nav-name-div p {
+    width: 100%;
+    color: white;
+    margin: 5px 0px;
+    font-size: 14px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 12px;
+    font-family: var(--para-1);
+    text-transform: uppercase;
+}
+
+.main-frnd-chat-div {
+    width: 100%;
+    height: calc(100% - 70px);
+    border-radius: 10px;
+    align-content: space-around;
+    justify-content: center;
+}
+
+.frnd-chat-text-div {
+    height: calc(100% - 70px);
+    width: 100%;
+    flex-direction: column;
+    flex-flow: column;
+    overflow-y: scroll;
+    justify-content: flex-start;
+}
+
+.frnd-chat-text-div::-webkit-scrollbar {
+    width: 5px;
+}
+
+.frnd-chat-text-div::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 6px;
+}
+
+.frnd-chat-text-div::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+.frnd-chat-send-div {
+    width: 100%;
+    height: 50px;
+    /* border: 1px solid blue; */
+    justify-content: space-around;
+}
+
+.frnd-chat-send-input-div {
+    width: calc(95% - 50px);
+    /* border: 1px solid red; */
+    border-radius: 30px;
+    background: #4F5565;
+}
+
+#frnd-chat-input {
+    background: #4F5565;
+    border: none;
+    padding: 5px 5px;
+    width: calc(100% - 50px);
+    outline: none;
+    border-radius: 30px;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 12px;
+}
+
+.frnd-chat-input-btn {
+    background-color: #7375FD;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    color: white;
+    width: 40px;
+    height: 30px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.frnd-chat-input-btn:first-child {
+    background: none;
+    color: #7278A4;
+    font-size: 20px;
+}
+
+.main-frnd-msg {
+    width: 100%;
+    margin: 5px 0px;
+    padding: 5px 0px;
+}
+
+.main-frnd-msg-div {
+    width: 95%;
+    position: relative;
+}
+
+.frnd-msg-name-para {
+    width: 100%;
+    text-align: left;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-family: var(--para-1);
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 11px;
+    color: white;
+    letter-spacing: 1px;
+}
+
+.frnd-msg-name-para span:first-child {
+
+    z-index: 99;
+    width: 8px;
+    border-radius: 50%;
+    background-color: red;
+    height: 8px;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    color: red;
+}
+
+.frnd-msg-name-para span:last-child {
+    margin-left: 10px;
+}
+
+.frnd-msg-div {
+    width: 100%;
+    align-items: flex-start;
+    flex-direction: column;
+    flex-flow: column;
+    position: relative;
+    margin-top: 5px;
+}
+
+/* .msg-icon {
+    padding: 0px;
+    margin: 0px;
+    position: absolute;
+    top: -21px;
+    left: none;
+    right: 0px;
+    bottom: 0px;
+    color: #87BB71;
+    font-size: 30px;
+}
+
+*/
+.frnd-msg-para {
+    width: 80%;
+    word-wrap: break-word;
+    background: #87BB71;
+    text-align: justify;
+    border-radius: 5px;
+    padding: 8px;
+    font-size: 11px;
+    line-height: 17px;
+    font-family: var(--para-1);
+    color: white;
+    text-transform: capitalize;
+}
+
+.user-side-para {
+    text-align: right;
+}
+
+.user-side-para-1 {
+    background-color: #74BEEE;
+}
+
+.user-side-div {
+    align-items: flex-end;
+}

@@ -1,0 +1,20 @@
+.reg_form_div_1{
+    width: 95%;
+    justify-content: flex-end !important;
+}
+.entry_link{
+    padding: 10px 10px;
+    border-radius: 5px;
+    margin-left: 5px;
+    font-size: 14px;
+    font-family: 'Courier New', Courier, monospace;
+    cursor: pointer;
+    text-decoration: none ;
+    font-weight: bold;
+    background: transparent;
+    color: black ;
+}
+.active{
+    background: #2CA2D5;
+    color: white;
+}

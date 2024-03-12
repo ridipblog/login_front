@@ -1,0 +1,41 @@
+.main-chat-side-div {
+    background: #383F4D;
+    height: 90%;
+    flex-direction: column;
+    flex-flow: column;
+    justify-content: space-around;
+    border-radius: 8px 0px 0px 8px;
+    padding: 0px 6px;
+}
+
+.chat-side-menu {
+    flex-direction: column;
+    flex-flow: column;
+    height: 20%;
+}
+
+.chat-side-menu:first-child {
+    justify-content: start;
+}
+
+.chat-side-menu:last-child {
+    height: 50%;
+    justify-content: space-around;
+}
+
+.chat-side-menu:first-child p {
+    font-size: 30px;
+    color: #999EB6;
+}
+
+.chat-side-nav {
+    color: #737785;
+    font-size: 17px;
+    cursor: pointer;
+    background: transparent !important;
+    transition: 0.5s ease-in-out;
+}
+
+.chat-side-nav:hover {
+    transform: scale(1.2);
+}

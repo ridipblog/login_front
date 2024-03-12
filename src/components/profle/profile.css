@@ -1,0 +1,23 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-image: none;
+    background: #DBE1E9;
+}
+
+.main_profile {
+    width: 100%;
+    background-image: linear-gradient(rgb(0, 0, 0), rgba(0, 0, 100, 0.4)), url('../../images/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 400px;
+    align-content: start;
+    padding: 10px 0px;
+    padding-bottom: 50px;
+    height: auto;
+}
