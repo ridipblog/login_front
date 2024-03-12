@@ -8,26 +8,25 @@ import ChatRoom from './components/chatsRooms/ChatRoom';
 import UnauthorizedPage from "./components/Unauthorized";
 import 'react-toastify/dist/ReactToastify.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { useCookies } from 'react-cookie';
+// import { useCookies } from 'react-cookie';
 import { createContext, useEffect } from 'react';
-export const cookieContext = createContext();
 function App() {
-    const [cookies, , ,] = useCookies(['user']);
-    useEffect(() => {
-    });
+    // const [cookies, , ,] = useCookies(['user']);
+    // useEffect(() => {
+    // });
     return (
         <>
 
-            <cookieContext.Provider value={[]}>
-                <Router>
-                    <Routes>
 
-                        <Route exact path="/registration" element={<Registration />} />
-                        <Route exact path="/login" element={<Login />} />
-                        <Route exact path="/profile" element={<Profile />} />
-                        <Route exact path='/user-setting' element={<UserSetting />} />
+            <Router>
+                <Routes>
 
-                        {
+                    <Route exact path="/registration" element={<Registration />} />
+                    <Route exact path="/login" element={<Login />} />
+                    <Route exact path="/profile" element={<Profile />} />
+                    <Route exact path='/user-setting' element={<UserSetting />} />
+                    < Route exact path='/chat-room' element={<ChatRoom />} />
+                    {/* {
 
                             (cookies.token ?
 
@@ -36,19 +35,19 @@ function App() {
                                 <Route exact path="*" element={<UnauthorizedPage />} />
 
                             )
-                        }
+                        } */}
 
-                        {/* Error Page With Protected Route */}
-                        {/* {
+                    {/* Error Page With Protected Route */}
+                    {/* {
                         check ? <Route exact path="/registration" element={<Registration />} />
                             :
                             <Route exact path="*" element={<Error />} />
                     } */}
 
 
-                    </Routes>
-                </Router>
-            </cookieContext.Provider>
+                </Routes>
+            </Router>
+
         </>
     );
 }
