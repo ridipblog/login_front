@@ -32,7 +32,7 @@ export default function Registration() {
                     position: 'top-center'
                 });
             } else {
-                navigate('/login');
+                navigate('/');
             }
         }).catch((error) => {
             console.log(error);

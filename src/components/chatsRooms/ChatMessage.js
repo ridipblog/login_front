@@ -7,7 +7,7 @@ export default function ChatMessage() {
         width: '100%',
         color: 'red'
     }
-    const socket = io('http://localhost:4000', { transports: ['websocket'] });
+    const socket = io('https://fees-fa-figured-reid.trycloudflare.com', { transports: ['websocket'] });
     const { userInfo } = useContext(requiredContextData);
     const { roomContext } = useContext(requiredContextData);
     const { frndRoomContext } = useContext(requiredContextData);

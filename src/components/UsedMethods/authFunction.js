@@ -14,7 +14,7 @@ const authFunction = async (token, navigate, removeCookie) => {
             });
             if (!check_user.data.message) {
                 removeCookie("token");
-                navigate('/login');
+                navigate('/');
             } else {
                 user_data = check_user.data.message;
             }
@@ -22,7 +22,7 @@ const authFunction = async (token, navigate, removeCookie) => {
             check_user = null;
         }
     } else {
-        navigate('/login');
+        navigate('/');
     }
     return user_data;
 }
