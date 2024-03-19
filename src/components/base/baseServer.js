@@ -1,6 +1,6 @@
 import axios from "axios";
 const instance = axios.create({
-    baseURL: "https://fees-fa-figured-reid.trycloudflare.com",
+    baseURL: "https://login-backend-dph4.onrender.com/",
     headers: {
         'Content-Type': 'application/json'
     }
