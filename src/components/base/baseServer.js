@@ -1,10 +1,10 @@
 import axios from "axios";
 const instance = axios.create({
-    baseURL: "https://login-backend-dph4.onrender.com/",
+    // baseURL: "https://login-backend-dph4.onrender.com",
+    baseURL: "http://localhost:4000",
     headers: {
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        accept: "application/json",
     }
 });
 export default instance;

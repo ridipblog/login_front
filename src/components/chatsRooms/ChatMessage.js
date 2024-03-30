@@ -2,6 +2,8 @@ import React, { useContext, useEffect, useState } from "react";
 import { requiredContextData } from "./ChatRoom";
 import { io } from "socket.io-client";
 import frnd_profile_dummy from "./images/frnd-profile.jpg";
+import baseInstance from '../base/baseServer';
+import axios from "axios";
 export default function ChatMessage() {
     const style = {
         width: '100%',
@@ -22,6 +24,8 @@ export default function ChatMessage() {
         // my_messages: [],
         // frnd_mesages: []
     });
+
+    const [selectedFile, setSelectedFile] = useState(null);
     const data = [
         1, 2, 3, 4, 5
     ];
@@ -36,6 +40,30 @@ export default function ChatMessage() {
             ...prevState,
             chat_messages: [...prevState.chat_messages, [message, userInfo.name, userInfo.email]]
         }));
+    }
+
+    // ------------------ select file --------------------
+    const selectFile = (e) => {
+        console.log(selectedFile);
+        setSelectedFile(e.target.files[0]);
+    }
+
+    // ------------------ upload image ------------------------
+    const uploadFile = async () => {
+        console.log(selectedFile)
+        const send_data = {
+            'image': selectedFile
+        };
+        const formData = new FormData();
+        formData.append('image', selectedFile);
+        formData.append('name', 'coder');
+        const config = {
+            headers: {
+                'content-type': 'multipart/form-data',
+            },
+        };
+        const data = await baseInstance.post('/upload', formData, config);
+        console.log(data);
     }
 
     useEffect(() => {
@@ -60,6 +88,8 @@ export default function ChatMessage() {
     }, [frndRoomName]);
     return (
         <div className="flexDiv main-chat-message-div">
+            <input type="file" onChange={selectFile} />
+            <button onClick={uploadFile}>Upload</button>
             <div className="flexDiv frnd-chat-nav-div">
                 <div className="flexDiv frnd-chat-nav-img-div">
                     <img src={frnd_profile_dummy} alt="" />
