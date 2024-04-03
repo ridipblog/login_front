@@ -9,7 +9,7 @@ export default function Entry(props) {
     const GoogleResponse = async (response) => {
         const decoded = await jwtDecode(response.credential);
         console.log(decoded.given_name);
-        const data = await axios.get("https://fees-fa-figured-reid.trycloudflare.com/loginWithGoogle", {
+        const data = await axios.get("https://proven-porcelain-year-cycle.trycloudflare.com/loginWithGoogle", {
             params: {
                 login_email: decoded.email,
                 given_name: decoded.given_name

@@ -11,7 +11,7 @@ export default function ChatFriendPanel() {
     const { userInfo } = useContext(requiredContextData);
     const { frndIDContext } = useContext(requiredContextData);
     // socket connection with backend
-    const socket = io('http://localhost:4000', { transports: ['websocket'] });
+    const socket = io('https://proven-porcelain-year-cycle.trycloudflare.com', { transports: ['websocket'] });
     const [inputState, setInputState] = useState({
         frnd_name: "",
     });
