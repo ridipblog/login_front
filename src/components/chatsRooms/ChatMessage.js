@@ -9,7 +9,7 @@ export default function ChatMessage() {
         width: '100%',
         color: 'red'
     }
-    const socket = io('https://proven-porcelain-year-cycle.trycloudflare.com', { transports: ['websocket'] });
+    const socket = io('http://localhost:4000', { transports: ['websocket'] });
     const { userInfo } = useContext(requiredContextData);
     const { roomContext } = useContext(requiredContextData);
     const { frndRoomContext } = useContext(requiredContextData);
@@ -19,13 +19,25 @@ export default function ChatMessage() {
     const [frndID,] = frndIDContext;
 
     const [message, setMessage] = useState('');
+    const [documentComponent, setDocumentComponent] = useState(false);
     const imageDialogRef = useRef(null);
     const [allMessages, setAllMessages] = useState({
         chat_messages: []
         // my_messages: [],
         // frnd_mesages: []
     });
+    // const [media, setMedia] = useState({
+    //     state_1: true,
+    //     state_2: {
+    //         data_1: false
+    //     }
+    // });
 
+    const [media, setMedia] = useState({
+        documentComponent: false,
+        selectedImage: '',
+        selectedDocument: ''
+    });
     const [selectedFile, setSelectedFile] = useState(null);
     const data = [
         1, 2, 3, 4, 5
@@ -42,12 +54,6 @@ export default function ChatMessage() {
             chat_messages: [...prevState.chat_messages, [message, userInfo.name, userInfo.email]]
         }));
         setMessage('');
-    }
-
-    // ------------------ select file --------------------
-    const selectFile = (e) => {
-        console.log(selectedFile);
-        setSelectedFile(e.target.files[0]);
     }
 
     // ------------------ upload image ------------------------
@@ -94,7 +100,8 @@ export default function ChatMessage() {
     }, [frndRoomName]);
     return (
         <div className="flexDiv main-chat-message-div">
-
+            {/* <button onClick={() => { setMedia(prevState => ({ ...prevState, state_1: !prevState.state_1 })); console.log(media.state_1) }}>Click 1</button>
+            <button onClick={() => { setMedia(prevState => ({ ...prevState, state_2: { ...prevState.state_2, data_1: !prevState.state_2.data_1 } })); console.log(media.state_2.data_1) }}>Click 2</button> */}
             <div className="flexDiv frnd-chat-nav-div">
                 <div className="flexDiv frnd-chat-nav-img-div">
                     <img src={frnd_profile_dummy} alt="" />
@@ -138,18 +145,21 @@ export default function ChatMessage() {
                         ))
                     }
                 </div>
-                <div className="flexDiv document-send-div">
-                    <div className="flexDiv document-send-div-1">
-                        <div className="flexDiv document-send-div-2">
-                            <input type="file" ref={imageDialogRef} />
-                            <button onClick={openImageDialog}><i className="fa-solid fa-image"></i></button>
-                            <button><i className="fa-solid fa-file"></i></button>
+                {
+                    media.documentComponent ?
+                        <div className="flexDiv document-send-div">
+                            <div className="flexDiv document-send-div-1">
+                                <div className="flexDiv document-send-div-2">
+                                    <input type="file" ref={imageDialogRef} onChange={(e) => setSelectedFile(e.target.files[0])} style={{ display: "none" }} />
+                                    <button onClick={openImageDialog}><i className="fa-solid fa-image"></i></button>
+                                    <button><i className="fa-solid fa-file"></i></button>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
+                        : ""}
                 <div className="flexDiv frnd-chat-send-div">
                     <div className="flexDiv frnd-chat-send-input-div">
-                        <button className="frnd-chat-input-btn"><i className="fa-solid fa-paperclip"></i></button>
+                        <button className="frnd-chat-input-btn" onClick={() => { setMedia(prevState => ({ ...prevState, documentComponent: !prevState.documentComponent })) }} ><i className="fa-solid fa-paperclip"></i></button>
                         <input type="text" id="frnd-chat-input" value={message} onChange={(e) => setMessage(e.target.value)} />
                     </div>
                     {
