@@ -9,7 +9,7 @@ export default function ChatMessage() {
         width: '100%',
         color: 'red'
     }
-    const socket = io('https://login-backend-dph4.onrender.com', { transports: ['websocket'] });
+    const socket = io('https://proven-porcelain-year-cycle.trycloudflare.com', { transports: ['websocket'] });
     const { userInfo } = useContext(requiredContextData);
     const { roomContext } = useContext(requiredContextData);
     const { frndRoomContext } = useContext(requiredContextData);
@@ -88,8 +88,7 @@ export default function ChatMessage() {
     }, [frndRoomName]);
     return (
         <div className="flexDiv main-chat-message-div">
-            <input type="file" onChange={selectFile} />
-            <button onClick={uploadFile}>Upload</button>
+
             <div className="flexDiv frnd-chat-nav-div">
                 <div className="flexDiv frnd-chat-nav-img-div">
                     <img src={frnd_profile_dummy} alt="" />
