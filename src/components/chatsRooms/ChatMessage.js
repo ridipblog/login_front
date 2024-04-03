@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { requiredContextData } from "./ChatRoom";
 import { io } from "socket.io-client";
 import frnd_profile_dummy from "./images/frnd-profile.jpg";
@@ -19,6 +19,7 @@ export default function ChatMessage() {
     const [frndID,] = frndIDContext;
 
     const [message, setMessage] = useState('');
+    const imageDialogRef = useRef(null);
     const [allMessages, setAllMessages] = useState({
         chat_messages: []
         // my_messages: [],
@@ -40,6 +41,7 @@ export default function ChatMessage() {
             ...prevState,
             chat_messages: [...prevState.chat_messages, [message, userInfo.name, userInfo.email]]
         }));
+        setMessage('');
     }
 
     // ------------------ select file --------------------
@@ -64,6 +66,10 @@ export default function ChatMessage() {
         };
         const data = await baseInstance.post('/upload', formData, config);
         console.log(data);
+    }
+    // --------------- image file dialoag --------------------
+    const openImageDialog = () => {
+        imageDialogRef.current.click();
     }
 
     useEffect(() => {
@@ -132,6 +138,15 @@ export default function ChatMessage() {
                         ))
                     }
                 </div>
+                <div className="flexDiv document-send-div">
+                    <div className="flexDiv document-send-div-1">
+                        <div className="flexDiv document-send-div-2">
+                            <input type="file" ref={imageDialogRef} />
+                            <button onClick={openImageDialog}><i className="fa-solid fa-image"></i></button>
+                            <button><i className="fa-solid fa-file"></i></button>
+                        </div>
+                    </div>
+                </div>
                 <div className="flexDiv frnd-chat-send-div">
                     <div className="flexDiv frnd-chat-send-input-div">
                         <button className="frnd-chat-input-btn"><i className="fa-solid fa-paperclip"></i></button>
@@ -139,7 +154,7 @@ export default function ChatMessage() {
                     </div>
                     {
                         frndRoomName ?
-                            <button onClick={sendMessage} className="frnd-chat-input-btn" ><i className="fa-solid fa-paper-plane"></i></button>
+                            <button onClick={sendMessage} className="frnd-chat-input-btn frnd-chat-input-btn-1" ><i className="fa-solid fa-paper-plane"></i></button>
                             : ""
                     }
                 </div>
