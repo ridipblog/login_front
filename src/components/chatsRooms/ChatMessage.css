@@ -13,7 +13,7 @@
     width: 60%;
     height: 90%;
     background: #383F4D;
-    /* position: relative; */
+    position: relative;
     align-content: flex-start;
 }
 
@@ -233,7 +233,7 @@
     left: 0;
     right: 0;
     position: absolute;
-    z-index: 99;
+    z-index: 10;
 }
 
 .document-send-div-1 {
@@ -256,4 +256,54 @@
     outline: none;
     cursor: pointer;
     color: white;
+}
+
+/* ------------------------ pre view upload document or image ------------------- */
+.main-pre-view-upload {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: rgba(00, 00, 0, 0.1);
+    z-index: 12;
+    /* display: none; */
+}
+
+.main-prev-view-image {
+    width: 80%;
+    height: 75%;
+    flex-direction: column;
+    flex-flow: column;
+    justify-content: space-between;
+    background: #A2C1BF;
+    border-radius: 5px;
+}
+
+.main-prev-view-image button:first-child {
+    background: none;
+    border: none;
+    color: red;
+    outline: none;
+    font-size: 22px;
+    cursor: pointer;
+    width: 95%;
+    text-align: right;
+
+}
+
+.main-prev-view-image button:last-child {
+    background: #1B193D;
+    color: white;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    font-family: var(--para-2);
+    padding: 5px 30px;
+    border-radius: 5px;
+    margin: 5px 0px;
+    cursor: pointer;
+}
+
+.main-prev-view-image img {
+    width: 90%;
+    height: 85%;
 }

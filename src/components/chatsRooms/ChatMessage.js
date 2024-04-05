@@ -21,6 +21,7 @@ export default function ChatMessage() {
     const [message, setMessage] = useState('');
     const [documentComponent, setDocumentComponent] = useState(false);
     const imageDialogRef = useRef(null);
+    const documentRef = useRef(null);
     const [allMessages, setAllMessages] = useState({
         chat_messages: []
         // my_messages: [],
@@ -74,8 +75,12 @@ export default function ChatMessage() {
         console.log(data);
     }
     // --------------- image file dialoag --------------------
-    const openImageDialog = () => {
-        imageDialogRef.current.click();
+    const openImageDialog = (input) => {
+        if (input == 1) {
+            imageDialogRef.current.click();
+        } else {
+            documentRef.current.click();
+        }
     }
 
     useEffect(() => {
@@ -102,6 +107,18 @@ export default function ChatMessage() {
         <div className="flexDiv main-chat-message-div">
             {/* <button onClick={() => { setMedia(prevState => ({ ...prevState, state_1: !prevState.state_1 })); console.log(media.state_1) }}>Click 1</button>
             <button onClick={() => { setMedia(prevState => ({ ...prevState, state_2: { ...prevState.state_2, data_1: !prevState.state_2.data_1 } })); console.log(media.state_2.data_1) }}>Click 2</button> */}
+
+            {/* ------------------ pre-view upload image or document ---------------------- */}
+            <div className="flexDiv main-pre-view-upload">
+                <div className="flexDiv main-prev-view-image">
+
+                    <button><i class="fas fa-window-close"></i></button>
+                    <img src={frnd_profile_dummy} />
+                    <button>Send <i class="fa-solid fa-paper-plane"></i></button>
+                </div>
+            </div>
+
+
             <div className="flexDiv frnd-chat-nav-div">
                 <div className="flexDiv frnd-chat-nav-img-div">
                     <img src={frnd_profile_dummy} alt="" />
@@ -150,9 +167,10 @@ export default function ChatMessage() {
                         <div className="flexDiv document-send-div">
                             <div className="flexDiv document-send-div-1">
                                 <div className="flexDiv document-send-div-2">
-                                    <input type="file" ref={imageDialogRef} onChange={(e) => setSelectedFile(e.target.files[0])} style={{ display: "none" }} />
-                                    <button onClick={openImageDialog}><i className="fa-solid fa-image"></i></button>
-                                    <button><i className="fa-solid fa-file"></i></button>
+                                    <input type="file" ref={imageDialogRef} onChange={(e) => { setMedia(prevState => ({ ...prevState, selectedImage: e.target.files[0] })) }} style={{ display: "none" }} accept=".png,.jpg,.jpeg" />
+                                    <button onClick={() => openImageDialog(1)}><i className="fa-solid fa-image"></i></button>
+                                    <input type="file" ref={documentRef} onChange={(e) => { setMedia(prevState => ({ ...prevState, selectedDocument: e.target.files[0] })) }} style={{ display: "none" }} accept=".pdf" />
+                                    <button onClick={() => openImageDialog(2)}><i className="fa-solid fa-file"></i></button>
                                 </div>
                             </div>
                         </div>
